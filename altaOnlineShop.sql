@@ -1,5 +1,5 @@
 ---- DDL----
--- 2 a
+-- 2a. Create table user
 create table users (
 id serial,
 nama varchar(255),
@@ -13,7 +13,7 @@ updated_at timestamp,
 primary key(id)
 );
 
---- 2 b
+-- 2b. Create table product, product_type, product_description, payment_method
 create table product (
 id serial, 
 product varchar(255),
@@ -57,7 +57,7 @@ method_name varchar(255),
 primary key(id)
 );
 
--- 2 c
+-- 2c. Create table transaction, transaction_detail 
 create table transaction(
 id serial,
 user_id int,
@@ -80,7 +80,7 @@ foreign key(transaction_id) references transaction(id),
 foreign key(product_id) references product(id)
 );
 
--- 3
+-- 3 create table kurir dengan field id, name, created_at, updated_at
 create table kurir(
 id serial,
 name varchar(255),
@@ -101,17 +101,14 @@ drop table shipping;
 ----- DML -----
 
 ---- Insert
--- 1 a insert 3 product type (product_type = 1 (fashion), 2 (elektronik), 3 (mebel))
+-- 1a. insert 3 product type
 insert into product_type (product_type_name)
 values
 ('fashion'),
 ('elektronik'),
 ('mebel');
 
-select * from product_type pt 
-
-
--- b. insert 2 product dengan type id = 1
+--merk--
 insert into merk(merk_name)
 values
 ('woles'),
@@ -121,8 +118,7 @@ values
 ('apple'),
 ('ceria');
 
-select * from product p 
-
+-- b. insert 2 product dengan type id = 1
 insert into product(product, product_type_id, product_description_id, merk_id, price, created_at, updated_at)
 values
 ('Kaos Polos', 1, 1, 1, 29000.00, now(), now()),
@@ -137,8 +133,6 @@ values
 ('Tablet', 2, 5, 5, 1500000.00, now(), now());
 
 -- d. insert 3 product dengan type id = 3
-select * from product p 
-
 INSERT INTO product (product, product_type_id, product_description_id, merk_id, price, created_at, updated_at)
 VALUES
 ('Kursi Plastik', 3, 6, 6, 58000.00, now(), now()),
@@ -166,7 +160,6 @@ values
 ('Transfer Bank');
  
 -- g. insert 5 user pada tabel user
-
 insert  into users(nama, alamat, tanggal_lahir, status_user, gender, created_at, updated_at)
 values
 ('aldo', 'jl kalianyar', '2001-09-22', True, 'm', CURRENT_TIMESTAMP - INTERVAL '7 days', now()),
@@ -176,8 +169,7 @@ values
 ('nisa', 'jl kerendang', '1999-08-22', True, 'f', CURRENT_TIMESTAMP - INTERVAL '30 days', now());
 
 
---- h. insert 3 transaksi di masing-masing user (min 3 user)
-
+-- h. insert 3 transaksi di masing-masing user (min 3 user)
 insert  into transaction(user_id, payment_method_id, transaction_date)
 values
 (1, 2, CURRENT_TIMESTAMP - INTERVAL '6 days'),
@@ -219,12 +211,12 @@ where created_at >= current_date - interval '7 days'
 AND created_at < current_date 
 and u.nama ilike '%a%';
 
---- d. hitung jumlah user/pelanggan dengan status gender perempuan.
-select count(gender) from users
+-- d. hitung jumlah user/pelanggan dengan status gender perempuan.
+select count(gender) as count_female from users
 where gender = 'f';
 
 
---- e. tampilkan data pelanggan dengan urutan sesuai nama abjad
+-- e. tampilkan data pelanggan dengan urutan sesuai nama abjad
 select * from users 
 order by nama asc
 
@@ -235,16 +227,15 @@ limit 5
 
 --- 3. Update
 --- 3a. Ubah data product id 1 dengan nama 'product dummy'
-select * from product p 
 update product set product='product dummy' where id = 1;
 
 --- 3b. update qty = 3 pada transaction detail dengan product id 1.
-select * from transaction_detail td 
 update transaction_detail set quantity = 3 where id = 1
 
 -- 4 delete
 -- 4a. delete data pada tabel product dengan id 1.
 delete from product where id=1;
+
 
 -- 4b. delete pada tabel product dengan product-type id 1.
 
@@ -321,7 +312,6 @@ select * from users
 
 update product set price = 60000.00 where id = 6
 select * from product 
-
 
 
 -- 8. create view yang menghasilkan data yang sama dengan nomor 4
