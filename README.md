@@ -1,12 +1,12 @@
 # relation-database
 Altera Data Engineer Batch 4. Tugas berkaitan dengan database relational, Data Definition Language, Data Manipulation Language
 
-Part 2 - Data Definition Language
+# Part 2 - Data Definition Language
 1. Create database alta_online_shop
 
    ![image](https://github.com/farhanriyandi/relation-database/assets/67671418/fc0e153b-d193-47f7-a5fe-4cce064a966d)
  
-Part 3 - Data Manipulation Language
+# Part 3 - Data Manipulation Language
 
 2. Select
 2a. Tampilkan nama user/ pelanggan dengan gender laki-laki
@@ -32,6 +32,35 @@ Part 3 - Data Manipulation Language
 2f. tampilkan 5 data transaksi dengan product id= 3 
 
 ![image](https://github.com/farhanriyandi/relation-database/assets/67671418/06407c10-1251-4b8e-8a91-b7b3fee70984)
+
+
+# Release 2: Join, Union, Sub-query, function
+1. gabungkan data transaksi dari user id 1 dan user id 2
+
+   ![image](https://github.com/farhanriyandi/relation-database/assets/67671418/55f8489b-2817-4511-a248-a12f64a346f6)
+
+2. tampilkan jumlah harga transaksi user id 1
+
+   ![image](https://github.com/farhanriyandi/relation-database/assets/67671418/a3980ad8-79f6-47db-a157-d266f4553847)
+
+3. tampilkan total transaksi dengan product type 2
+   
+![image](https://github.com/farhanriyandi/relation-database/assets/67671418/77b9e5ee-381d-4fd6-9ea0-b25b4f22b296)
+
+   
+4. tampilkan semua field table product dan field name table product type yang saling berhubungan
+
+   ![image](https://github.com/farhanriyandi/relation-database/assets/67671418/8e3aad0f-755e-498c-9bab-52c582cc21c3)
+   
+5.    tampilkan semua field table transaction, field name table product dan field name table user
+
+![image](https://github.com/farhanriyandi/relation-database/assets/67671418/dfa236f9-8927-46e5-b1d5-fa92835294df)
+
+6. tampilkan data products yang tidak pernah ada di tabel transaction_details dengan sub-query
+
+![image](https://github.com/farhanriyandi/relation-database/assets/67671418/3771de2c-6593-4124-8697-db1ee6b41df5)
+  
+
 
 
 
