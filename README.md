@@ -4,12 +4,18 @@ Altera Data Engineer Batch 4. Tugas berkaitan dengan database relational, Data D
 # Part 1 - Schema Database
 
 penjelasan:
-1 to many: pelanggan dengan transaction
+one to many: pelanggan dengan transaction
+
 one to many: payment_method dengan transaction
+
 one to many: transaction dengan transaction_detail
+
 one to many: product dengan transaction_detail
+
 one to many: product_type dengan product
+
 one to one: product_description dengan product
+
 one to many: merk dengan product
 
 # Part 2 - Data Definition Language
